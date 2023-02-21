@@ -13,18 +13,20 @@ navigator.geolocation.getCurrentPosition(function(position) {
   });
 
 const API_KEY = "AIzaSyBdmF37Lbgn623YZYckDGPZMqYAHnhDFMQ";
-var STOP_NAME = prompt("Enter your stop name: ");
-const URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${STOP_NAME}&key=${API_KEY}`;
+
+const stopName = prompt("Enter a stop name:");
+
+const URL = `https://maps.googleapis.com/maps/api/geocode/json?address=${stopName}&key=${API_KEY}`;
 
 fetch(URL)
   .then(response => response.json())
   .then(data => {
-    const location = data.results[0].geometry.location;
-    const latitude = location.lat;
-    const longitude = location.lng;
+    const matches = data.results;
     
-    console.log(`Latitude: ${latitude}`);
-    console.log(`Longitude: ${longitude}`);
+    console.log(`Available options for "${stopName}":`);
+    matches.forEach(match => {
+      console.log(`- ${match.formatted_address}`);
+    });
   })
   .catch(error => {
     console.error(error);
