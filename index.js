@@ -1,13 +1,18 @@
-var x = document.getElementById("demo");
-function getLocation() {
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-} else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-}
-}
-
-function showPosition(position) {
-x.innerHTML = "Latitude: " + position.coords.latitude +
-"<br>Longitude: " + position.coords.longitude;
-}
+// Get the user's current position
+navigator.geolocation.getCurrentPosition(function(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+  
+    // Display the initial location
+    console.log("Initial location: " + lat + ", " + lng);
+  
+    // Update the location in real-time
+    navigator.geolocation.watchPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+  
+      // Display the updated location
+      console.log("Updated location: " + lat + ", " + lng);
+    });
+  });
+  
