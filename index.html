@@ -7,7 +7,9 @@
     <title>Mini Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="initAutocomplete()">
+    <input type="text" id="address-input" placeholder="Enter an address">
+    <ul id="suggestion-list"></ul>
     <script src="index.js"></script>
 </body>
 </html>
