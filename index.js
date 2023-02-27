@@ -53,7 +53,7 @@ function initAutocomplete() {
 function latlon() {
   const location = document.querySelector("#address-input");
   const jsonvalues = `https://nominatim.openstreetmap.org/search/${location}?format=json&addressdetails=1&limit=1&polygon_svg=1`;
-  console.log($.getJSON(jsonvalues[0]));
+  console.log($.getJSON(jsonvalues));
 }
 var submitButton = document.getElementById("submit");
 submitButton.addEventListener("click",latlon);
