@@ -8,9 +8,14 @@ function updateAlarmStatus() {
 
   const distanceValue = distance(lat1, lng1, lat2, lng2);
   console.log(`Distance: ${distanceValue} km`);
+  function beep(){
+    var sound = new Audio("beep.mp3");
+    sound.play()
+  }
 
   if (distanceValue < kmInputValue) {
     console.log('Alarm');
+    beep();
   } else {
     console.log('No Alarm');
   }
