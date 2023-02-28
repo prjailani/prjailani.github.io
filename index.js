@@ -9,10 +9,10 @@ function updateAlarmStatus() {
   const distanceValue = distance(lat1, lng1, lat2, lng2);
   console.log(`Distance: ${distanceValue} km`);
 
-  if (distanceValue > kmInputValue) {
-    console.log('No alarm');
-  } else {
+  if (distanceValue < kmInputValue) {
     console.log('Alarm');
+  } else {
+    console.log('No Alarm');
   }
 }
 
