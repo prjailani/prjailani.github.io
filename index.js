@@ -13,7 +13,7 @@ function updateAlarmStatus() {
     sound.play()
   }
 
-  if (distanceValue < kmInputValue) {
+  if (distanceValue <= kmInputValue) {
     console.log('Alarm');
     beep();
   } else {
