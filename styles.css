@@ -7,6 +7,11 @@
     font-family: Poppins Regular;
     src: url(Poppins-Regular.ttf);
 }
+
+body {
+    background-color: #FCFEFF;
+}
+
 .title {
     font-family: Poppins Bold;
     font-size: 5rem;

@@ -57,7 +57,7 @@ function initAutocomplete() {
   });
 
   function showSuggestions(suggestions) {
-    const suggestionList = document.getElementById('suggestion-list');
+    const suggestionList = document.getElementById('mav');
     suggestionList.innerHTML = '';
     suggestions.forEach(suggestion => {
       const li = document.createElement('li');
