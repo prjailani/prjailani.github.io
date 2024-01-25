@@ -110,3 +110,9 @@ function distance(lat1, lng1, lat2, lng2) {
 
   return (R * c) / 1000; // Convert to kilometers
 }
+
+
+// var stop = document.getElementById("stop");
+// stop.addEventListener("click",()=> {
+  
+// });
